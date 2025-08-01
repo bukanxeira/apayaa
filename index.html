@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hari Pacar Nasional</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      color: #d63384;
+      text-align: center;
+      padding: 40px 20px;
+      transition: background 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+    }
+
+    .dark {
+      background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+      color: #ffc0cb;
+    }
+
+    .container {
+      background: #ffffffee;
+      border: 5px dashed #ffb6c1;
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .dark .container {
+      background: #2e2e2e;
+      border-color: #ff69b4;
+    }
+
+    h1 {
+      font-size: 2em;
+      animation: popIn 1s ease;
+      margin-bottom: 15px;
+    }
+
+    .emoji {
+      font-size: 2.2em;
+      animation: float 2s infinite ease-in-out;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 12px;
+      width: 90%;
+      border-radius: 20px;
+      border: 2px solid #ff69b4;
+      font-size: 1em;
+      background-color: #fffafc;
+      margin-top: 15px;
+    }
+
+    .dark input {
+      background-color: #444;
+      color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 26px;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #ff1493;
+    }
+
+    .certificate {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff0f5;
+      border-radius: 20px;
+      border: 2px dotted #ffa6c9;
+      display: none;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .dark .certificate {
+      background-color: #2f2f2f;
+      border-color: #ff69b4;
+    }
+
+    .toggle-dark {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fall {
+      to { transform: translateY(100vh); opacity: 0; }
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    @keyframes catPop {
+      0% { right: -100px; }
+      10% { right: 20px; }
+      40% { right: 20px; }
+      50% { right: -100px; }
+      100% { right: -100px; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    @keyframes bobaFloat {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    /* 📱 Responsive HP */
+    @media screen and (max-width: 480px) {
+      body { padding: 20px 10px; }
+      .container { padding: 25px 15px; }
+      h1 { font-size: 1.7em; }
+      .emoji { font-size: 2em; }
+      input, button { width: 100%; font-size: 0.95em; }
+      .toggle-dark { padding: 8px; font-size: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Mode</button>
+
+  <div style="position:fixed; top:10px; left:50%; transform:translateX(-50%); font-size:1em; color:#ff69b4; animation: blink 2s infinite; z-index: 5;">
+    💞 Khusus untuk Radisty 💞
+  </div>
+
+  <div id="catUwU" style="position:fixed; bottom:10px; right:-100px; font-size:40px; animation: catPop 10s infinite;">
+    🐱
+  </div>
+
+  <div class="container">
+    <div class="emoji">💌🐰✨</div>
+    <h1>Untuk Radisty Pendek 💖</h1>
+    <p><em>Hari Pacar Nasional, khusus kamu aja~</em></p>
+    <input type="text" value="Pencet Tombol Dibawah!!!" readonly>
+    <button onclick="showCertificate()">Pencet yaaa 🎀</button>
+
+    <div class="certificate" id="hasil">
+      <h2>🎖️ Happy Girlfriend Day! 🎖️</h2>
+      <p><b>Radisty</b>, kamu adalah:</p>
+      <p><b>✨ cewe terlucu sealam semesta ✨</b></p>
+      <p><i>"Hari ini kamu boleh manja, besok kembali ke realita ya wlee~" 🧸</i></p>
+      <p>📝 Disahkan langsung oleh Azhomil</p>
+    </div>
+  </div>
+
+  <footer>
+    🎶 Musik: (maaf kalo gamuncul)<br>
+    🐣 Dibuat penuh cinta & gemoy untuk Radisty
+  </footer>
+
+  <!-- Musik Bucin -->
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Efek Lucu -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function showCertificate() {
+      document.getElementById("hasil").style.display = "block";
+      confetti({ particleCount: 150, spread: 120, origin: { y: 0.6 }, colors: ['#ff69b4', '#ffc0cb', '#fff0f5'] });
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    setInterval(() => {
+      const flower = document.createElement("div");
+      flower.textContent = "🌸";
+      flower.style.position = "fixed";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.top = "-50px";
+      flower.style.fontSize = Math.random() * 20 + 24 + "px";
+      flower.style.animation = `fall ${Math.random() * 8 + 5}s linear forwards`;
+      flower.style.zIndex = 0;
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 10000);
+    }, 500);
+
+    setInterval(() => {
+      const balloon = document.createElement("div");
+      balloon.textContent = "🎈";
+      balloon.style.position = "fixed";
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.bottom = "-50px";
+      balloon.style.fontSize = Math.random() * 20 + 20 + "px";
+      balloon.style.animation = `rise ${Math.random() * 8 + 6}s linear forwards`;
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }, 800);
+
+    setInterval(() => {
+      const boba = document.createElement('div');
+      boba.textContent = '🧋';
+      boba.style.position = 'fixed';
+      boba.style.left = `${Math.random() * 100}vw`;
+      boba.style.bottom = '-60px';
+      boba.style.fontSize = '26px';
+      boba.style.animation = 'bobaFloat 10s linear forwards';
+      document.body.appendChild(boba);
+      setTimeout(() => boba.remove(), 11000);
+    }, 5000);
+  </script>
+
+</body>
+</html>
